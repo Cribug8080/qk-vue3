@@ -1,12 +1,17 @@
 import './public-path';
 import { createApp } from 'vue'
+import ElementPlus from 'element-plus';
+import 'element-plus/dist/index.css'
 import App from './App.vue'
+import router from './router';
 
 let instance = null;
 
 function render(props = {}) {
   const { container } = props;
   instance = createApp(App);
+  instance.use(ElementPlus);
+  instance.use(router);
   instance.mount(container ? container.querySelector('#app') : '#app');
 }
 
