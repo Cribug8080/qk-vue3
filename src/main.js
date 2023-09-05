@@ -32,7 +32,6 @@ export async function unmount() {
   instance.unmount();
   instance._container.innerHTML = '';
   instance = null;
-  // router = null;
-  history.destroy();
+  router.options.history.destroy();
 }
 
